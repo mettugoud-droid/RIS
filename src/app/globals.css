@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* === PRIMARY PALETTE === */
+  --color-navy-900: #0A0E1A;
+  --color-navy-800: #0F1629;
+  --color-navy-700: #141D38;
+  --color-navy-600: #1A2544;
+  --color-navy-500: #1F2D52;
+
+  --color-electric-300: #66A3FF;
+  --color-electric-400: #3385FF;
+  --color-electric-500: #0066FF;
+  --color-electric-600: #0052CC;
+  --color-electric-700: #003D99;
+
+  --color-grey-100: #F8F9FA;
+  --color-grey-200: #E9ECEF;
+  --color-grey-300: #DEE2E6;
+  --color-grey-400: #ADB5BD;
+  --color-grey-500: #6C757D;
+  --color-grey-600: #495057;
+
+  /* === SEMANTIC === */
+  --color-success: #00C853;
+  --color-warning: #FFB300;
+  --color-error: #FF1744;
+  --color-info: #00B0FF;
+
+  /* === FONTS === */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* === ANIMATIONS === */
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-bounce-down: bounce-down 2s infinite;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-fade-in-down: fade-in-down 0.5s ease-out forwards;
+  --animate-scale-in: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  --animate-slide-down: slide-down 0.3s ease forwards;
+}
+
+/* === KEYFRAMES === */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.4); }
+}
+
+@keyframes bounce-down {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes network-pulse {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes counter-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(0, 102, 255, 0); }
+  50% { text-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
+}
+
+/* === BASE STYLES === */
+:root {
+  --background: #0A0E1A;
+  --foreground: #F8F9FA;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 102, 255, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 102, 255, 0.3);
+  border-radius: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === GLASS MORPHISM UTILITIES === */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 102, 255, 0.3);
+}
+
+/* === GRADIENT UTILITIES === */
+.gradient-text {
+  background: linear-gradient(135deg, #0066FF, #66A3FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-cta {
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #0A0E1A 0%, #141D38 50%, #0A0E1A 100%);
+}
+
+.gradient-radial-blue {
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
+}
+
+/* === DOT GRID PATTERN === */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,221 @@
+export interface Project {
+  slug: string;
+  title: string;
+  client: string;
+  industry: string;
+  serviceType: string;
+  location: string;
+  value: string;
+  areaSqft: string;
+  duration: string;
+  cameras?: number;
+  summary: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  metrics: { label: string; value: string }[];
+  tags: string[];
+  featured: boolean;
+}
+
+export const projects: Project[] = [
+  {
+    slug: "warehouse-cctv-120-camera-installation",
+    title: "120-Camera Warehouse CCTV Installation",
+    client: "XYZ Logistics Pvt Ltd",
+    industry: "Warehouse / Logistics",
+    serviceType: "CCTV",
+    location: "Hyderabad, Telangana",
+    value: "₹45 Lakhs",
+    areaSqft: "1,00,000",
+    duration: "3 Weeks",
+    cameras: 120,
+    summary: "Complete IP surveillance system for a 1 lakh sqft 3PL warehouse with 120 cameras, 30-day NVR storage, and remote monitoring.",
+    challenge: "The client faced recurring pilferage issues, insurance claim rejections due to lack of evidence, and had zero visibility into night-shift operations across their massive warehouse facility.",
+    solution: "Deployed 120 IP cameras (mix of 4MP dome, PTZ, and bullet) with AI-based motion analytics. Installed 16-bay NVR with 96TB RAID storage for 45-day retention. Set up centralized monitoring with mobile access for management.",
+    results: ["40% reduction in pilferage within first month", "99.9% camera uptime achieved", "Insurance premium reduced by 35%", "Night-shift productivity improved 25%", "ROI achieved in 8 months"],
+    metrics: [{ label: "Pilferage Reduction", value: "↓40%" }, { label: "Uptime", value: "99.9%" }, { label: "Insurance Savings", value: "↓35%" }, { label: "ROI Period", value: "8 Months" }],
+    tags: ["CCTV", "Warehouse", "Logistics", "IP Cameras", "NVR"],
+    featured: true,
+  },
+  {
+    slug: "industrial-electrification-2mw-facility",
+    title: "2MW Industrial Electrification — Manufacturing Plant",
+    client: "ABC Manufacturing Ltd",
+    industry: "Manufacturing",
+    serviceType: "Electrification",
+    location: "Pune, Maharashtra",
+    value: "₹1.5 Crore",
+    areaSqft: "2,50,000",
+    duration: "10 Weeks",
+    summary: "Complete 2MW electrical infrastructure including 2000 kVA transformer, HT/LT panels, DG synchronization, and power distribution for a greenfield manufacturing facility.",
+    challenge: "Greenfield factory requiring complete electrical infrastructure from HT yard to shop floor within tight timeline. Complex load requirements with CNC machines, EOT cranes, and HVAC systems.",
+    solution: "Designed and installed 2000 kVA transformer, HT panels (11kV), LT distribution (MDB, SMDB, DBs), 1500 kVA DG with AMF panel, APFC panel for power factor correction, complete earthing system, and industrial LED lighting.",
+    results: ["Commissioned 2 weeks ahead of schedule", "Power factor maintained at 0.98", "20% energy cost savings vs initial design", "100% CEIG compliance achieved", "Zero power interruptions since commissioning"],
+    metrics: [{ label: "Capacity", value: "2000 kVA" }, { label: "Power Factor", value: "0.98" }, { label: "Energy Savings", value: "20%" }, { label: "Delivery", value: "2 Wks Early" }],
+    tags: ["Electrification", "HT/LT", "Transformer", "Manufacturing", "DG Sync"],
+    featured: true,
+  },
+  {
+    slug: "corporate-office-security-upgrade",
+    title: "Corporate Office Security Upgrade — Multi-Floor",
+    client: "TechPark Developers",
+    industry: "Corporate Office",
+    serviceType: "Integrated",
+    location: "Bangalore, Karnataka",
+    value: "₹65 Lakhs",
+    areaSqft: "75,000",
+    duration: "5 Weeks",
+    summary: "Integrated security upgrade across 8 floors including CCTV, access control, visitor management, and networking infrastructure.",
+    challenge: "Aging security infrastructure across 8 floors of a busy corporate campus. Need to upgrade without disrupting 2000+ employees. Multiple entry points with no centralized access management.",
+    solution: "Deployed 80 IP cameras with face recognition at entries, 45 biometric + card readers, visitor management kiosks, and complete Cat6A networking backbone. All integrated into a single command center.",
+    results: ["Zero unauthorized access since deployment", "Visitor check-in time reduced from 8 min to 45 sec", "100% audit trail for compliance", "Integrated with HR attendance system", "Monthly security reports automated"],
+    metrics: [{ label: "Unauthorized Access", value: "Zero" }, { label: "Check-in Time", value: "45 sec" }, { label: "Audit Coverage", value: "100%" }, { label: "Floors Covered", value: "8" }],
+    tags: ["CCTV", "Access Control", "Networking", "Corporate", "Integration"],
+    featured: true,
+  },
+  {
+    slug: "cold-storage-surveillance-monitoring",
+    title: "Cold Storage Surveillance & Temperature Monitoring",
+    client: "FreshChain Cold Logistics",
+    industry: "Cold Storage",
+    serviceType: "CCTV",
+    location: "Chennai, Tamil Nadu",
+    value: "₹28 Lakhs",
+    areaSqft: "40,000",
+    duration: "2 Weeks",
+    cameras: 65,
+    summary: "Specialized CCTV installation for cold storage facility with anti-fog cameras, temperature monitoring integration, and loading dock surveillance.",
+    challenge: "Standard cameras fail in -25°C cold rooms. Client needed visibility into cold chambers, ambient areas, and loading docks with temperature event correlation.",
+    solution: "Installed 65 specialized cameras: anti-fog dome cameras for cold rooms (-40°C rated), standard IP cameras for ambient zones, and ANPR at dock doors. Integrated with temperature monitoring to trigger recording on threshold breach.",
+    results: ["Complete visibility in all temperature zones", "Temperature breach response time: under 2 minutes", "Loading dock theft eliminated", "Insurance compliance achieved", "Remote monitoring from HQ in Mumbai"],
+    metrics: [{ label: "Cameras", value: "65" }, { label: "Temp Range", value: "-40°C to +50°C" }, { label: "Response Time", value: "<2 Min" }, { label: "Theft", value: "Zero" }],
+    tags: ["CCTV", "Cold Storage", "Temperature", "Specialized", "ANPR"],
+    featured: false,
+  },
+  {
+    slug: "3pl-multi-warehouse-surveillance",
+    title: "3PL Multi-Warehouse Surveillance — 5 Locations",
+    client: "SpeedLog 3PL Services",
+    industry: "Warehouse / Logistics",
+    serviceType: "CCTV",
+    location: "Pan India (5 Cities)",
+    value: "₹1.8 Crore",
+    areaSqft: "4,50,000",
+    duration: "8 Weeks",
+    cameras: 500,
+    summary: "Centralized surveillance across 5 warehouse locations with 500+ cameras, unified monitoring platform, and standardized design.",
+    challenge: "3PL operator with 5 warehouses across India needed unified surveillance. Each location had different existing infrastructure. Management wanted single-dashboard monitoring.",
+    solution: "Standardized design across all 5 sites: IP cameras with centralized VMS, site-level NVRs with cloud backup, unified mobile app access, and quarterly preventive maintenance AMC.",
+    results: ["500+ cameras deployed across 5 cities", "Single dashboard for all locations", "99.8% overall uptime", "Standardized SOP for all sites", "₹45L AMC for ongoing maintenance"],
+    metrics: [{ label: "Sites", value: "5" }, { label: "Cameras", value: "500+" }, { label: "Uptime", value: "99.8%" }, { label: "Coverage", value: "4.5L sqft" }],
+    tags: ["CCTV", "Multi-Site", "3PL", "Centralized", "Pan India"],
+    featured: true,
+  },
+  {
+    slug: "pharma-cleanroom-access-control",
+    title: "Pharma Cleanroom Access & Monitoring System",
+    client: "MedLife Pharmaceuticals",
+    industry: "Pharma",
+    serviceType: "Access Control",
+    location: "Hyderabad, Telangana",
+    value: "₹32 Lakhs",
+    areaSqft: "30,000",
+    duration: "4 Weeks",
+    summary: "Cleanroom-grade access control with interlock doors, audit trail, CCTV integration, and FDA compliance documentation.",
+    challenge: "Pharma manufacturer needed GMP-compliant access control for cleanroom areas with full audit trail, interlock capability, and integration with environmental monitoring.",
+    solution: "Deployed biometric + card access at all clean zones with air-lock door interlocking. Full audit trail with timestamp, personnel ID, and linked CCTV footage. Environmental monitoring integration triggers lockdown on deviation.",
+    results: ["100% FDA/WHO-GMP compliance achieved", "Complete audit trail for 5 years", "Unauthorized cleanroom entry: Zero", "Passed 3 regulatory audits without observations", "Integrated with BMS for environmental control"],
+    metrics: [{ label: "Compliance", value: "100% FDA" }, { label: "Audit Trail", value: "5 Years" }, { label: "Breaches", value: "Zero" }, { label: "Audits Passed", value: "3" }],
+    tags: ["Access Control", "Pharma", "Cleanroom", "Compliance", "GMP"],
+    featured: false,
+  },
+  {
+    slug: "shopping-mall-fire-alarm-pa-system",
+    title: "Shopping Mall — Fire Alarm & PA/EVAC System",
+    client: "CityMall Properties",
+    industry: "Retail / Mall",
+    serviceType: "Fire Alarm",
+    location: "Hyderabad, Telangana",
+    value: "₹55 Lakhs",
+    areaSqft: "1,20,000",
+    duration: "6 Weeks",
+    summary: "Addressable fire alarm system with voice evacuation, smoke management integration, and complete NBC compliance for a 5-floor shopping mall.",
+    challenge: "New shopping mall required NBC-compliant fire detection and voice evacuation covering 5 floors, basement parking, food court, and cinema hall. Needed integration with smoke extraction and sprinkler systems.",
+    solution: "Installed Honeywell addressable fire alarm with 400+ detectors, manual call points on all floors, voice evacuation with zone-wise messaging, fireman's intercom, and integration with smoke dampers and sprinkler flow switches.",
+    results: ["Fire NOC obtained in first attempt", "400+ detectors with individual addressing", "Zone-wise evacuation messaging", "Full NBC/IS 2189 compliance", "Insurance premium reduced 30%"],
+    metrics: [{ label: "Detectors", value: "400+" }, { label: "NOC", value: "1st Attempt" }, { label: "Floors", value: "5" }, { label: "Insurance", value: "↓30%" }],
+    tags: ["Fire Alarm", "EVAC", "Retail", "Mall", "NBC Compliance"],
+    featured: false,
+  },
+  {
+    slug: "warehouse-complete-electrification",
+    title: "Warehouse Complete Electrification — 80,000 sqft",
+    client: "QuickShip Fulfillment",
+    industry: "Warehouse / Logistics",
+    serviceType: "Electrification",
+    location: "Mumbai, Maharashtra",
+    value: "₹72 Lakhs",
+    areaSqft: "80,000",
+    duration: "5 Weeks",
+    summary: "Complete electrical infrastructure for a new fulfillment center including power distribution, industrial lighting, DG backup, and EV charging stations.",
+    challenge: "New 80,000 sqft fulfillment center needed complete electrical setup from scratch including high-bay lighting, conveyor power feeds, charging stations for material handling equipment, and future expansion provision.",
+    solution: "Installed 500 kVA transformer, complete LT distribution, 250 kVA DG with AMF, 200+ high-bay LED fixtures (500 lux), conveyor power distribution with isolation, MHE charging bays, and 30% spare capacity for expansion.",
+    results: ["Commissioned in 5 weeks (2 weeks early)", "500 lux uniform lighting achieved", "30% expansion capacity built-in", "Energy-efficient LED saves ₹8L/year", "Zero power disruptions since handover"],
+    metrics: [{ label: "Capacity", value: "500 kVA" }, { label: "Lighting", value: "500 Lux" }, { label: "Energy Savings", value: "₹8L/yr" }, { label: "Spare", value: "30%" }],
+    tags: ["Electrification", "Warehouse", "Lighting", "EV Charging", "Fulfillment"],
+    featured: true,
+  },
+  {
+    slug: "enterprise-networking-2000-nodes",
+    title: "Enterprise Networking — 2000 Node Campus",
+    client: "InfoSpace Technologies",
+    industry: "Corporate Office",
+    serviceType: "Networking",
+    location: "Hyderabad, Telangana",
+    value: "₹58 Lakhs",
+    areaSqft: "1,50,000",
+    duration: "6 Weeks",
+    summary: "Complete Cat6A structured cabling with fiber backbone, enterprise Wi-Fi 6, and server room infrastructure for a 2000-seat IT campus.",
+    challenge: "IT company moving to new campus needed 2000+ network points, Wi-Fi coverage for open areas, fiber interconnects between 3 buildings, and a Tier-2 server room setup.",
+    solution: "Deployed Cat6A cabling (2000+ points), 48-strand single-mode fiber backbone between buildings, 60+ Wi-Fi 6 access points with controller, and complete server room with 10 racks, hot/cold aisle, and redundant PDUs.",
+    results: ["10Gbps backbone connectivity achieved", "100% Wi-Fi coverage (no dead zones)", "Fluke DTX certified — all links pass", "Server room PUE: 1.4", "25-year warranty on passive infrastructure"],
+    metrics: [{ label: "Nodes", value: "2000+" }, { label: "Speed", value: "10Gbps" }, { label: "Wi-Fi Coverage", value: "100%" }, { label: "Warranty", value: "25 Years" }],
+    tags: ["Networking", "Cabling", "Wi-Fi", "Server Room", "Corporate"],
+    featured: false,
+  },
+  {
+    slug: "industrial-park-perimeter-security",
+    title: "Industrial Park — Perimeter & Campus Security",
+    client: "Greenfield Industrial Estate",
+    industry: "Industrial Park",
+    serviceType: "Integrated",
+    location: "Visakhapatnam, AP",
+    value: "₹1.2 Crore",
+    areaSqft: "5,00,000",
+    duration: "12 Weeks",
+    summary: "Comprehensive campus security for a 50-acre industrial park including perimeter surveillance, ANPR gates, control room, and tenant CCTV backbone.",
+    challenge: "50-acre industrial estate with 12 tenant buildings needed unified perimeter security, vehicle management across 4 gates, central monitoring, and backbone infrastructure for individual tenant CCTV.",
+    solution: "Deployed thermal + visible perimeter cameras (2km coverage), ANPR at all 4 gates with boom barriers, central control room with video wall, fiber backbone to all 12 buildings, and tenant-ready CCTV infrastructure.",
+    results: ["2km perimeter fully covered (thermal + visible)", "ANPR captures 99.5% of plates", "Centralized control room operational 24/7", "12 buildings connected via fiber", "Tenant security onboarding reduced to 3 days"],
+    metrics: [{ label: "Perimeter", value: "2 km" }, { label: "ANPR Accuracy", value: "99.5%" }, { label: "Buildings", value: "12" }, { label: "Area", value: "50 Acres" }],
+    tags: ["Perimeter", "ANPR", "Industrial Park", "Thermal", "Control Room"],
+    featured: true,
+  },
+];
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
+
+export function getProjectsByIndustry(industry: string): Project[] {
+  return projects.filter((p) => p.industry.toLowerCase().includes(industry.toLowerCase()));
+}
+
+export function getProjectsByService(service: string): Project[] {
+  return projects.filter((p) => p.serviceType.toLowerCase().includes(service.toLowerCase()));
+}
+
+export function getFeaturedProjects(): Project[] {
+  return projects.filter((p) => p.featured);
+}
