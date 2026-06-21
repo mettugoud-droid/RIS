@@ -107,7 +107,7 @@ export function generateRFQNumber(): string {
 // WhatsApp message templates
 export const whatsappTemplates = {
   welcome: (name: string, service: string) =>
-    `Hi ${name}! 👋\n\nThank you for reaching out to Raksha Integrated Solutions.\n\nWe've received your enquiry for ${service} and our team will respond within 2 hours.\n\nMeanwhile, explore our projects: raksha.co.in/projects\n\n— Team Raksha`,
+    `Hi ${name}! 👋\n\nThank you for reaching out to Raksha Integrated Solutions.\n\nWe've received your enquiry for ${service} and our team will respond within 2 hours.\n\nMeanwhile, explore our projects: raksha.work/projects\n\n— Team Raksha`,
 
   rfq_received: (name: string, rfqNumber: string) =>
     `Hi ${name}! ✅\n\nYour RFQ (${rfqNumber}) has been received successfully.\n\nOur engineering team is reviewing your requirements. You'll receive a detailed proposal within 48 hours.\n\nFor urgent queries, call: +91 99999 99999\n\n— Team Raksha`,

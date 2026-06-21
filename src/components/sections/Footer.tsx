@@ -120,11 +120,11 @@ export function Footer() {
                 +91 99999 99999
               </a>
               <a
-                href="mailto:info@raksha.co.in"
+                href="mailto:info@raksha.work"
                 className="flex items-center gap-2.5 text-sm text-grey-300 hover:text-white transition-colors group"
               >
                 <Mail className="w-4 h-4 text-electric-400 group-hover:brightness-125" />
-                info@raksha.co.in
+                info@raksha.work
               </a>
               <div className="flex items-center gap-2.5 text-sm text-grey-300">
                 <MapPin className="w-4 h-4 text-electric-400 flex-shrink-0" />

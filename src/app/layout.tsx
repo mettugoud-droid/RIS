@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://raksha.co.in",
+    url: "https://www.raksha.work",
     siteName: "Raksha Integrated Solutions",
     title: "Raksha Integrated Solutions | Industrial CCTV & Electrification Experts",
     description:

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { projects } from "@/lib/data/projects";
 import { landingPages } from "@/lib/data/landing-pages";
 
-const BASE_URL = "https://raksha.co.in";
+const BASE_URL = "https://www.raksha.work";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

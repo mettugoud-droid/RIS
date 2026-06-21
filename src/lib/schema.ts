@@ -6,8 +6,8 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     name: "Raksha Integrated Solutions",
     alternateName: "Raksha Infra",
-    url: "https://raksha.co.in",
-    logo: "https://raksha.co.in/logo.png",
+    url: "https://www.raksha.work",
+    logo: "https://www.raksha.work/logo.png",
     description: "India's leading industrial CCTV installation & electrification contractor. Warehouse surveillance, power distribution, networking, and AMC services.",
     address: {
       "@type": "PostalAddress",
@@ -43,12 +43,12 @@ export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://raksha.co.in",
+    "@id": "https://www.raksha.work",
     name: "Raksha Integrated Solutions",
-    image: "https://raksha.co.in/og/default.jpg",
+    image: "https://www.raksha.work/og/default.jpg",
     telephone: "+91-99999-99999",
-    email: "info@raksha.co.in",
-    url: "https://raksha.co.in",
+    email: "info@raksha.work",
+    url: "https://www.raksha.work",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Hyderabad",
@@ -89,7 +89,7 @@ export function getServiceSchema(service: { name: string; description: string; u
     provider: {
       "@type": "Organization",
       name: "Raksha Integrated Solutions",
-      url: "https://raksha.co.in",
+      url: "https://www.raksha.work",
     },
     areaServed: {
       "@type": "Country",
