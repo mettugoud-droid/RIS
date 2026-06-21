@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Warehouse Surveillance Solutions | Raksha Infra",
-  description:
-    "Designed for 3PL, logistics, and fulfillment centers. Reduce pilferage by 40%, improve accountability with AI-powered warehouse surveillance.",
+export const metadata = {
+  title: "Warehouse Surveillance Solutions | Raksha",
+  description: "Surveillance for 3PL, logistics, and fulfillment centers. Reduce pilferage.",
 };
 
+const data = getLandingPageBySlug("warehouse-surveillance-solutions");
+
 export default function Page() {
-  const data = getLandingPageBySlug("warehouse-surveillance-solutions")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

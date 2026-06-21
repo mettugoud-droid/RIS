@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Professional CCTV Installation in Bangalore | Raksha Infra",
-  description:
-    "Enterprise-grade CCTV installation in Bangalore for warehouses, offices, and factories. 4K IP cameras, AI analytics, 3-year warranty. Free site survey.",
+export const metadata = {
+  title: "Professional CCTV Installation in Bangalore | Raksha",
+  description: "Enterprise-grade CCTV installation in Bangalore. 4K IP cameras, AI analytics, 3-year warranty. Free site survey.",
 };
 
+const data = getLandingPageBySlug("cctv-installation-bangalore");
+
 export default function Page() {
-  const data = getLandingPageBySlug("cctv-installation-bangalore")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

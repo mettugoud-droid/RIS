@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Cold Storage CCTV Installation | Raksha Infra",
-  description:
-    "Cameras rated for -40°C with anti-fog technology. Temperature event integration, condensation-proof cameras for cold storage surveillance.",
+export const metadata = {
+  title: "Cold Storage CCTV Installation | Raksha",
+  description: "Cameras rated for -40C. Anti-fog technology. Temperature integration.",
 };
 
+const data = getLandingPageBySlug("cold-storage-cctv-installation");
+
 export default function Page() {
-  const data = getLandingPageBySlug("cold-storage-cctv-installation")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

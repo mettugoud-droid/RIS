@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Electrical AMC Services | Raksha Infra",
-  description:
-    "Preventive maintenance for panels, transformers, DG sets, and complete electrical infrastructure. Thermal imaging, 24/7 breakdown support, compliance reports.",
+export const metadata = {
+  title: "Electrical AMC Services | Raksha",
+  description: "Preventive maintenance for panels, transformers, DG sets.",
 };
 
+const data = getLandingPageBySlug("electrical-amc-services");
+
 export default function Page() {
-  const data = getLandingPageBySlug("electrical-amc-services")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

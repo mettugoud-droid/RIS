@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Security System Integrator — India | Raksha Infra",
-  description:
-    "Pan-India security integration: CCTV, access control, fire safety, and networking under one roof. 500+ projects across 15+ cities.",
+export const metadata = {
+  title: "Security System Integrator India | Raksha",
+  description: "Pan-India security integration: CCTV, access control, fire safety, networking.",
 };
 
+const data = getLandingPageBySlug("security-system-integrator-india");
+
 export default function Page() {
-  const data = getLandingPageBySlug("security-system-integrator-india")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Industrial CCTV Installation | Raksha Infra",
-  description:
-    "Heavy-duty surveillance for manufacturing plants, processing units, and industrial facilities. Explosion-proof cameras, thermal imaging, IP67 rated.",
+export const metadata = {
+  title: "Industrial CCTV Installation | Raksha",
+  description: "Heavy-duty surveillance for manufacturing plants and industrial facilities.",
 };
 
+const data = getLandingPageBySlug("industrial-cctv-installation");
+
 export default function Page() {
-  const data = getLandingPageBySlug("industrial-cctv-installation")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Industrial Electrical Contractor in Hyderabad | Raksha Infra",
-  description:
-    "HT/LT panels, transformers, power distribution, and complete industrial electrification in Hyderabad. 5000+ kVA installed, 100% CEIG compliance.",
+export const metadata = {
+  title: "Industrial Electrical Contractor Hyderabad | Raksha",
+  description: "HT/LT panels, transformers, power distribution in Hyderabad.",
 };
 
+const data = getLandingPageBySlug("electrical-contractor-hyderabad");
+
 export default function Page() {
-  const data = getLandingPageBySlug("electrical-contractor-hyderabad")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

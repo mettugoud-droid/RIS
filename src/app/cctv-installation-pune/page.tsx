@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "CCTV Installation Experts in Pune | Raksha Infra",
-  description:
-    "Factory, warehouse, and office surveillance in Pune. IP camera systems, enterprise NVR, ANPR cameras. Pune's leading industrial CCTV contractor.",
+export const metadata = {
+  title: "CCTV Installation Experts in Pune | Raksha",
+  description: "Factory, warehouse, and office CCTV in Pune. Leading industrial contractor.",
 };
 
+const data = getLandingPageBySlug("cctv-installation-pune");
+
 export default function Page() {
-  const data = getLandingPageBySlug("cctv-installation-pune")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

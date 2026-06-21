@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "CCTV Installation Company in Chennai | Raksha Infra",
-  description:
-    "Industrial surveillance, warehouse monitoring, and corporate security cameras across Chennai & Tamil Nadu. Free survey, 3-year warranty.",
+export const metadata = {
+  title: "CCTV Installation Company in Chennai | Raksha",
+  description: "Industrial surveillance and warehouse monitoring across Chennai. Free survey.",
 };
 
+const data = getLandingPageBySlug("cctv-installation-chennai");
+
 export default function Page() {
-  const data = getLandingPageBySlug("cctv-installation-chennai")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

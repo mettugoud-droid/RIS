@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Fiber Optic Installation Services | Raksha Infra",
-  description:
-    "Single-mode & multi-mode fiber for campus networks, inter-building connectivity, and ISP infrastructure. 500+ km laid, OTDR tested, 25-year warranty.",
+export const metadata = {
+  title: "Fiber Optic Installation Services | Raksha",
+  description: "Single-mode and multi-mode fiber for campus and inter-building connectivity.",
 };
 
+const data = getLandingPageBySlug("fiber-optic-installation-services");
+
 export default function Page() {
-  const data = getLandingPageBySlug("fiber-optic-installation-services")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

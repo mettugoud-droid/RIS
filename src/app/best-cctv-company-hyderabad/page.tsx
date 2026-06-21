@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Best CCTV Company in Hyderabad | Raksha Infra",
-  description:
-    "Rated 4.9/5 on Google. 500+ projects completed. Enterprise-grade surveillance for businesses in Hyderabad. Free site survey, 3-year warranty.",
+export const metadata = {
+  title: "Best CCTV Company in Hyderabad | Raksha",
+  description: "Rated 4.9/5 on Google. 500+ projects. Enterprise-grade surveillance.",
 };
 
+const data = getLandingPageBySlug("best-cctv-company-hyderabad");
+
 export default function Page() {
-  const data = getLandingPageBySlug("best-cctv-company-hyderabad")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Transformer Installation & Commissioning | Raksha Infra",
-  description:
-    "Oil and dry-type transformers from 100 kVA to 5000 kVA. Professional installation, testing, commissioning, and CEIG documentation.",
+export const metadata = {
+  title: "Transformer Installation & Commissioning | Raksha",
+  description: "Transformers from 100 kVA to 5000 kVA. Installation and commissioning.",
 };
 
+const data = getLandingPageBySlug("transformer-installation-services");
+
 export default function Page() {
-  const data = getLandingPageBySlug("transformer-installation-services")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Warehouse Electrical Works | Raksha Infra",
-  description:
-    "Complete power infrastructure for modern warehouses: high-bay LED lighting, power distribution, DG backup, and EV/MHE charging infrastructure.",
+export const metadata = {
+  title: "Warehouse Electrical Works | Raksha",
+  description: "Complete power infrastructure for modern warehouses.",
 };
 
+const data = getLandingPageBySlug("warehouse-electrical-works");
+
 export default function Page() {
-  const data = getLandingPageBySlug("warehouse-electrical-works")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }

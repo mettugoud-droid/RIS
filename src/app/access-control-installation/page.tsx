@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { SEOLandingTemplate } from "@/components/templates/SEOLandingTemplate";
 import { getLandingPageBySlug } from "@/lib/data/landing-pages";
+import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Access Control System Installation | Raksha Infra",
-  description:
-    "Biometric, RFID, boom barriers, turnstiles, and face recognition for offices, factories, and restricted areas. Zero breach record, 5000+ readers deployed.",
+export const metadata = {
+  title: "Access Control System Installation | Raksha",
+  description: "Biometric, RFID, boom barriers, turnstiles for offices and factories.",
 };
 
+const data = getLandingPageBySlug("access-control-installation");
+
 export default function Page() {
-  const data = getLandingPageBySlug("access-control-installation")!;
+  if (!data) notFound();
   return <SEOLandingTemplate data={data} />;
 }
