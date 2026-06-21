@@ -30,7 +30,8 @@ export function RFQPage() {
     projectTitle: "", services: [] as string[], projectLocation: "",
     areaSqft: "", numberOfBuildings: "", description: "",
     specifications: "", budgetRange: "", expectedStart: "",
-    expectedCompletion: "", paymentTerms: "",
+    expectedCompletion: "", paymentTerms: "", estimatedBudget: "",
+    timeline: "", projectType: "",
   });
 
   const updateField = (field: string, value: string | string[]) => {
