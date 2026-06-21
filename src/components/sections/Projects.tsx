@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const filters = ["All", "CCTV", "Electrification", "Networking", "Fire Safety"];
 
@@ -16,8 +17,7 @@ const projects = [
     category: "CCTV",
     stats: ["200+ Cameras", "1,00,000 sqft"],
     value: "₹45L",
-    image: "/projects/warehouse-1.jpg",
-    color: "from-electric-500/20 to-navy-700",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
   },
   {
     id: 2,
@@ -26,8 +26,7 @@ const projects = [
     category: "Electrification",
     stats: ["50,000 sqft", "Complete HT/LT"],
     value: "₹1.2Cr",
-    image: "/projects/logistics-1.jpg",
-    color: "from-success/20 to-navy-700",
+    image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80",
   },
   {
     id: 3,
@@ -36,8 +35,7 @@ const projects = [
     category: "Electrification",
     stats: ["3 Phase Power", "DG Synchronization"],
     value: "₹80L",
-    image: "/projects/factory-1.jpg",
-    color: "from-warning/20 to-navy-700",
+    image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80",
   },
   {
     id: 4,
@@ -46,8 +44,7 @@ const projects = [
     category: "Networking",
     stats: ["500+ Nodes", "Fiber Backbone"],
     value: "₹35L",
-    image: "/projects/corporate-1.jpg",
-    color: "from-info/20 to-navy-700",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
   {
     id: 5,
@@ -56,8 +53,7 @@ const projects = [
     category: "CCTV",
     stats: ["80 Cameras", "Temperature Monitoring"],
     value: "₹28L",
-    image: "/projects/pharma-1.jpg",
-    color: "from-electric-300/20 to-navy-700",
+    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80",
   },
   {
     id: 6,
@@ -66,8 +62,7 @@ const projects = [
     category: "Fire Safety",
     stats: ["Addressable System", "PA + EVAC"],
     value: "₹55L",
-    image: "/projects/mall-1.jpg",
-    color: "from-error/20 to-navy-700",
+    image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=800&q=80",
   },
 ];
 
@@ -148,20 +143,15 @@ export function Projects() {
                 transition={{ duration: 0.3, delay: i * 0.05 }}
                 className="group glass rounded-2xl overflow-hidden hover:-translate-y-1 hover:border-electric-500/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-400 cursor-pointer"
               >
-                {/* Image Placeholder */}
+                {/* Image */}
                 <div className="relative h-[200px] sm:h-[220px] overflow-hidden">
-                  <div
-                    className={cn(
-                      "absolute inset-0 bg-gradient-to-br",
-                      project.color
-                    )}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-600 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  {/* Decorative elements for placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-lg bg-white/20" />
-                    </div>
-                  </div>
                   {/* Category Badge */}
                   <div className="absolute top-3 right-3">
                     <span className="px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-black/60 backdrop-blur-sm">

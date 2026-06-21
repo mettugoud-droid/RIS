@@ -3,10 +3,24 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { NetworkDiagram } from "@/components/ui/NetworkDiagram";
+import Image from "next/image";
+import { images } from "@/lib/images";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy-900">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src={images.hero.warehouse}
+          alt="Industrial warehouse infrastructure"
+          fill
+          className="object-cover opacity-[0.15] brightness-50"
+          priority
+          sizes="100vw"
+        />
+      </div>
+
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 gradient-hero opacity-80" />
       <div className="absolute inset-0 gradient-radial-blue" />

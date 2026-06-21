@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -139,10 +140,14 @@ export function Testimonials() {
 
                   {/* Author */}
                   <div className="flex items-center gap-3 mb-6">
-                    {/* Avatar Placeholder */}
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-electric-500 to-electric-700 border-2 border-electric-500 flex items-center justify-center text-white font-bold text-sm">
-                      {testimonial.author.charAt(0)}
-                    </div>
+                    {/* Avatar */}
+                    <Image
+                      src={`https://images.unsplash.com/photo-${current === 0 ? "1507003211169-0a1dd7228f2d" : current === 1 ? "1472099645785-5658abf4ff4e" : current === 2 ? "1500648767791-00dcc994a43e" : "1519085360753-af0119f7cbe7"}?w=200&q=80`}
+                      alt={testimonial.author}
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-electric-500"
+                    />
                     <div>
                       <p className="text-base font-semibold text-white">
                         {testimonial.author}
