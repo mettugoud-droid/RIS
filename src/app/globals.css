@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* === PRIMARY PALETTE === */
-  --color-navy-900: #0A0E1A;
-  --color-navy-800: #0F1629;
-  --color-navy-700: #141D38;
-  --color-navy-600: #1A2544;
-  --color-navy-500: #1F2D52;
+  /* === PRIMARY PALETTE (Matched to Raksha Logo) === */
+  --color-navy-900: #0D0820;
+  --color-navy-800: #140F2E;
+  --color-navy-700: #1C1640;
+  --color-navy-600: #251E52;
+  --color-navy-500: #2D1B69;
 
-  --color-electric-300: #66A3FF;
-  --color-electric-400: #3385FF;
-  --color-electric-500: #0066FF;
-  --color-electric-600: #0052CC;
-  --color-electric-700: #003D99;
+  --color-electric-300: #A374FF;
+  --color-electric-400: #7C4DFF;
+  --color-electric-500: #5E35B1;
+  --color-electric-600: #4527A0;
+  --color-electric-700: #311B92;
+
+  /* === BRAND RED (Raksha Script Red) === */
+  --color-brand-red: #E63329;
+  --color-brand-red-light: #FF5252;
+  --color-brand-red-dark: #C62828;
 
   --color-grey-100: #F8F9FA;
   --color-grey-200: #E9ECEF;
@@ -48,8 +53,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(230, 51, 41, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(230, 51, 41, 0.4); }
 }
 
 @keyframes bounce-down {
@@ -91,13 +96,13 @@
 
 /* === BASE STYLES === */
 :root {
-  --background: #0A0E1A;
+  --background: #0D0820;
   --foreground: #F8F9FA;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 102, 255, 0.3) transparent;
+  scrollbar-color: rgba(94, 53, 177, 0.3) transparent;
 }
 
 *::-webkit-scrollbar {
@@ -109,7 +114,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: rgba(0, 102, 255, 0.3);
+  background: rgba(94, 53, 177, 0.3);
   border-radius: 3px;
 }
 
@@ -139,22 +144,22 @@ body {
 
 /* === GRADIENT UTILITIES === */
 .gradient-text {
-  background: linear-gradient(135deg, #0066FF, #66A3FF);
+  background: linear-gradient(135deg, #E63329, #FF5252);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-cta {
-  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+  background: linear-gradient(135deg, #E63329 0%, #C62828 100%);
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #0A0E1A 0%, #141D38 50%, #0A0E1A 100%);
+  background: linear-gradient(135deg, #0D0820 0%, #1C1640 50%, #0D0820 100%);
 }
 
 .gradient-radial-blue {
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(94, 53, 177, 0.08) 0%, transparent 70%);
 }
 
 /* === DOT GRID PATTERN === */
