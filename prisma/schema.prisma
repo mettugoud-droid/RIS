@@ -1,0 +1,164 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// === LEADS ===
+model Lead {
+  id              String    @id @default(cuid())
+  name            String
+  email           String?
+  phone           String
+  company         String?
+  designation     String?
+  source          String    // rfq, site_survey, calculator, download, whatsapp, landing_page, blog, contact
+  sourcePage      String?
+  industry        String?
+  serviceNeeded   String?
+  budgetRange     String?
+  timeline        String?
+  projectLocation String?
+  areaSqft        String?
+  utmSource       String?
+  utmMedium       String?
+  utmCampaign     String?
+  utmTerm         String?
+  notes           String?
+
+  // Scoring & Assignment
+  score           Int       @default(0)
+  priority        String    @default("medium") // low, medium, high, urgent
+  status          String    @default("new")    // new, contacted, qualified, proposal_sent, negotiation, won, lost
+  assignedTo      String?
+
+  // CRM Sync
+  zohoLeadId      String?
+  zohoSynced      Boolean   @default(false)
+  zohoSyncedAt    DateTime?
+  zohoSyncRetries Int       @default(0)
+
+  // WhatsApp
+  whatsappSent    Boolean   @default(false)
+
+  // Relations
+  rfqSubmissions  RFQSubmission[]
+  downloadEvents  DownloadEvent[]
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  contactedAt     DateTime?
+  convertedAt     DateTime?
+
+  @@index([status])
+  @@index([source])
+  @@index([createdAt])
+  @@index([zohoSynced])
+}
+
+// === RFQ SUBMISSIONS ===
+model RFQSubmission {
+  id                  String    @id @default(cuid())
+  rfqNumber           String    @unique
+  leadId              String?
+  lead                Lead?     @relation(fields: [leadId], references: [id])
+
+  // Project Details
+  projectTitle        String
+  services            Json      // string[]
+  projectLocation     String?
+  areaSqft            String?
+  numberOfBuildings   String?
+  description         String?
+  specifications      String?
+
+  // Budget & Timeline
+  budgetRange         String?
+  expectedStart       String?
+  expectedCompletion  String?
+  paymentTerms        String?
+
+  // Attachments
+  attachments         Json?     // [{name, url, size, type}]
+
+  // Status
+  status              String    @default("submitted") // submitted, under_review, quotation_sent, negotiation, awarded, rejected
+  quotationUrl        String?
+  quotationValue      Float?
+
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// === CONVERSION EVENTS ===
+model ConversionEvent {
+  id          String   @id @default(cuid())
+  sessionId   String?
+  leadId      String?
+  eventType   String   // form_start, form_complete, cta_click, calculator_use, download, whatsapp_click, call_click, rfq_submit
+  eventPage   String?
+  eventData   Json?
+  value       Float?
+  ipAddress   String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+
+  @@index([eventType])
+  @@index([createdAt])
+  @@index([sessionId])
+}
+
+// === PAGE VIEWS ===
+model PageView {
+  id          String   @id @default(cuid())
+  sessionId   String?
+  pagePath    String
+  pageTitle   String?
+  referrer    String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  deviceType  String?  // mobile, tablet, desktop
+  country     String?
+  city        String?
+  viewedAt    DateTime @default(now())
+
+  @@index([pagePath])
+  @@index([viewedAt])
+}
+
+// === DOWNLOADS ===
+model DownloadEvent {
+  id           String   @id @default(cuid())
+  downloadSlug String
+  leadId       String?
+  lead         Lead?    @relation(fields: [leadId], references: [id])
+  ipAddress    String?
+  userAgent    String?
+  downloadedAt DateTime @default(now())
+
+  @@index([downloadSlug])
+}
+
+// === CONTACT MESSAGES ===
+model ContactMessage {
+  id          String   @id @default(cuid())
+  name        String
+  email       String?
+  phone       String
+  company     String?
+  subject     String?
+  message     String
+  source      String   @default("contact_page")
+  status      String   @default("unread") // unread, read, replied
+  createdAt   DateTime @default(now())
+
+  @@index([status])
+  @@index([createdAt])
+}
