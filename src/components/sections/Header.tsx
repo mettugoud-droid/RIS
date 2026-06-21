@@ -94,7 +94,7 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-[10000] transition-all duration-300",
           scrolled
-            ? "bg-navy-900/95 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_24px_rgba(0,0,0,0.3)] py-3"
+            ? "bg-white/95 backdrop-blur-xl border-b border-grey-200/20 shadow-[0_4px_24px_rgba(0,0,0,0.1)] py-2"
             : "bg-transparent py-5"
         )}
       >
@@ -112,7 +112,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("solutions")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-grey-300 hover:text-white transition-colors">
+              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
                 Solutions
                 <ChevronDown
                   className={cn(
@@ -129,7 +129,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("industries")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-grey-300 hover:text-white transition-colors">
+              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
                 Industries
                 <ChevronDown
                   className={cn(
@@ -140,16 +140,16 @@ export function Header() {
               </button>
             </div>
 
-            <a href="/projects" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
+            <a href="/projects" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
               Projects
             </a>
-            <a href="/resources/blog" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
+            <a href="/resources/blog" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
               Resources
             </a>
-            <a href="/about" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
+            <a href="/about" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
               About
             </a>
-            <a href="/contact" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
+            <a href="/contact" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
               Contact
             </a>
           </nav>

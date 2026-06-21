@@ -8,16 +8,16 @@ interface LogoProps {
 
 export function Logo({ size = "md", variant = "full", className = "" }: LogoProps) {
   const sizes = {
-    sm: { height: 32 },
-    md: { height: 40 },
-    lg: { height: 56 },
+    sm: { height: 36 },
+    md: { height: 44 },
+    lg: { height: 60 },
   };
 
   const s = sizes[size];
 
   if (variant === "compact") {
     return (
-      <div className={className}>
+      <div className={`inline-block bg-white rounded-lg px-2 py-1 ${className}`}>
         <img
           src="/logo.png"
           alt="Raksha Integrated Solutions"
@@ -29,7 +29,7 @@ export function Logo({ size = "md", variant = "full", className = "" }: LogoProp
   }
 
   return (
-    <div className={className}>
+    <div className={`inline-block bg-white rounded-lg px-3 py-1.5 ${className}`}>
       <img
         src="/logo-wide.png"
         alt="Raksha Integrated Solutions"

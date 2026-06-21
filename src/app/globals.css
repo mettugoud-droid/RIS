@@ -1,23 +1,28 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* === PRIMARY PALETTE (Matched to Raksha Logo) === */
-  --color-navy-900: #0D0820;
-  --color-navy-800: #140F2E;
-  --color-navy-700: #1C1640;
-  --color-navy-600: #251E52;
-  --color-navy-500: #2D1B69;
+  /* === PRIMARY PALETTE (High Contrast for Logo Visibility) === */
+  --color-navy-900: #0F1419;
+  --color-navy-800: #1A1F26;
+  --color-navy-700: #252B33;
+  --color-navy-600: #2F363E;
+  --color-navy-500: #3A424B;
 
-  --color-electric-300: #A374FF;
-  --color-electric-400: #7C4DFF;
-  --color-electric-500: #5E35B1;
-  --color-electric-600: #4527A0;
-  --color-electric-700: #311B92;
+  --color-electric-300: #FF6B6B;
+  --color-electric-400: #E63329;
+  --color-electric-500: #D32F2F;
+  --color-electric-600: #B71C1C;
+  --color-electric-700: #8E0000;
 
   /* === BRAND RED (Raksha Script Red) === */
   --color-brand-red: #E63329;
   --color-brand-red-light: #FF5252;
   --color-brand-red-dark: #C62828;
+
+  /* === BRAND PURPLE (Logo Circle) === */
+  --color-brand-purple: #2D1B69;
+  --color-brand-purple-light: #5E35B1;
+  --color-brand-purple-dark: #1A0F3D;
 
   --color-grey-100: #F8F9FA;
   --color-grey-200: #E9ECEF;
@@ -96,13 +101,13 @@
 
 /* === BASE STYLES === */
 :root {
-  --background: #0D0820;
+  --background: #0F1419;
   --foreground: #F8F9FA;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(94, 53, 177, 0.3) transparent;
+  scrollbar-color: rgba(230, 51, 41, 0.3) transparent;
 }
 
 *::-webkit-scrollbar {
@@ -114,7 +119,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: rgba(94, 53, 177, 0.3);
+  background: rgba(230, 51, 41, 0.3);
   border-radius: 3px;
 }
 
@@ -155,11 +160,11 @@ body {
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #0D0820 0%, #1C1640 50%, #0D0820 100%);
+  background: linear-gradient(135deg, #0F1419 0%, #1A1F26 50%, #0F1419 100%);
 }
 
 .gradient-radial-blue {
-  background: radial-gradient(circle, rgba(94, 53, 177, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(230, 51, 41, 0.06) 0%, transparent 70%);
 }
 
 /* === DOT GRID PATTERN === */
