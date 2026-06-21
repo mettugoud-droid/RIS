@@ -94,14 +94,14 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-[10000] transition-all duration-300",
           scrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-grey-200/20 shadow-[0_4px_24px_rgba(0,0,0,0.1)] py-2"
-            : "bg-transparent py-5"
+            ? "bg-navy-900/95 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_24px_rgba(0,0,0,0.3)] py-2"
+            : "bg-transparent py-4"
         )}
       >
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
-            <Logo size={scrolled ? "sm" : "md"} />
+            <Logo size={scrolled ? "md" : "lg"} />
           </a>
 
           {/* Desktop Navigation */}
@@ -112,7 +112,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("solutions")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
+              <button className="flex items-center gap-1 text-sm font-medium text-grey-300 hover:text-white transition-colors">
                 Solutions
                 <ChevronDown
                   className={cn(
@@ -129,7 +129,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("industries")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
+              <button className="flex items-center gap-1 text-sm font-medium text-grey-300 hover:text-white transition-colors">
                 Industries
                 <ChevronDown
                   className={cn(
@@ -140,16 +140,16 @@ export function Header() {
               </button>
             </div>
 
-            <a href="/projects" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
+            <a href="/projects" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
               Projects
             </a>
-            <a href="/resources/blog" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
+            <a href="/resources/blog" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
               Resources
             </a>
-            <a href="/about" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
+            <a href="/about" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
               About
             </a>
-            <a href="/contact" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-grey-300 hover:text-white")}>
+            <a href="/contact" className="text-sm font-medium text-grey-300 hover:text-white transition-colors">
               Contact
             </a>
           </nav>
