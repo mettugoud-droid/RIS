@@ -22,6 +22,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/Logo";
 
 const solutionsMenu = [
   {
@@ -100,10 +101,7 @@ export function Header() {
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
-            <span className="text-xl font-bold text-white">RAKSHA</span>
-            <span className="text-[10px] text-electric-400 block -mt-1 font-medium tracking-wide">
-              INTEGRATED SOLUTIONS
-            </span>
+            <Logo size={scrolled ? "sm" : "md"} />
           </a>
 
           {/* Desktop Navigation */}
@@ -159,7 +157,7 @@ export function Header() {
           {/* Desktop CTA */}
           <a
             href="#site-audit"
-            className="hidden lg:inline-flex items-center px-6 py-2.5 rounded-[10px] text-sm font-semibold text-white bg-electric-500 hover:bg-electric-600 hover:-translate-y-0.5 transition-all duration-200"
+            className="hidden lg:inline-flex items-center px-6 py-2.5 rounded-[10px] text-sm font-semibold text-white bg-brand-red hover:bg-brand-red-dark hover:-translate-y-0.5 transition-all duration-200"
           >
             Get Quote
           </a>

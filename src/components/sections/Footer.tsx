@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 
 const footerLinks = {
   Solutions: [
@@ -97,12 +98,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             {/* Logo */}
             <div className="mb-5">
-              <span className="text-2xl font-bold text-white">
-                RAKSHA
-              </span>
-              <span className="text-xs text-electric-400 block mt-0.5 font-medium">
-                INTEGRATED SOLUTIONS
-              </span>
+              <Logo size="lg" />
             </div>
 
             <p className="text-sm text-grey-400 max-w-[280px] leading-relaxed mb-6">

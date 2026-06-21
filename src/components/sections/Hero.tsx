@@ -91,7 +91,7 @@ export function Hero() {
           {/* Primary CTA */}
           <a
             href="#site-audit"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-cta shadow-[0_4px_16px_rgba(0,102,255,0.3)] hover:shadow-[0_0_60px_rgba(0,102,255,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-cta shadow-[0_4px_16px_rgba(230,51,41,0.3)] hover:shadow-[0_0_60px_rgba(230,51,41,0.4)] hover:-translate-y-0.5 transition-all duration-300"
           >
             Book Free Site Survey
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
