@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-navy-900 text-grey-100 antialiased">
+      <body className="min-h-screen bg-white text-grey-100 antialiased">
         <TrackingScripts />
         {children}
       </body>

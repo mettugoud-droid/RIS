@@ -95,7 +95,7 @@ export function Header() {
           "fixed top-0 left-0 right-0 z-[10000] transition-all duration-300",
           scrolled
             ? "bg-white shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-2"
-            : "bg-transparent py-4"
+            : "bg-white/90 backdrop-blur-sm py-4"
         )}
       >
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
@@ -112,7 +112,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("solutions")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
+              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
                 Solutions
                 <ChevronDown
                   className={cn(
@@ -129,7 +129,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("industries")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
+              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
                 Industries
                 <ChevronDown
                   className={cn(
@@ -140,16 +140,16 @@ export function Header() {
               </button>
             </div>
 
-            <a href="/projects" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
+            <a href="/projects" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
               Projects
             </a>
-            <a href="/resources/blog" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
+            <a href="/resources/blog" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
               Resources
             </a>
-            <a href="/about" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
+            <a href="/about" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
               About
             </a>
-            <a href="/contact" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
+            <a href="/contact" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
               Contact
             </a>
           </nav>
@@ -170,7 +170,7 @@ export function Header() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={cn("lg:hidden w-10 h-10 flex items-center justify-center", scrolled ? "text-navy-900" : "text-white")}
+            className="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

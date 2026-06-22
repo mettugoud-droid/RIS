@@ -15,19 +15,12 @@ export function Logo({ size = "md", className = "" }: LogoProps) {
   const s = sizes[size];
 
   return (
-    <div
-      className={`relative inline-flex items-center justify-center rounded-2xl ${className}`}
-      style={{
-        background: "radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 80%)",
-        padding: "8px 16px",
-        boxShadow: "0 0 15px rgba(255,255,255,0.05), 0 0 30px rgba(255,255,255,0.02)",
-      }}
-    >
+    <div className={`inline-flex items-center justify-center ${className}`}>
       <img
         src="/logo.png"
         alt="Raksha Integrated Solutions"
         style={{ height: s.height, width: "auto" }}
-        className="object-contain relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]"
+        className="object-contain"
       />
     </div>
   );
