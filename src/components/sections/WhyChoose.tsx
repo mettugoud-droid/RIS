@@ -34,7 +34,7 @@ export function WhyChoose() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-24 bg-white">
+    <section ref={ref} className="relative py-16 sm:py-24 bg-navy-800">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           variants={staggerContainer}
@@ -99,7 +99,7 @@ export function WhyChoose() {
               <span className="text-sm font-semibold text-electric-400 uppercase tracking-[0.05em] text-center">
                 Raksha
               </span>
-              <span className="text-sm font-semibold text-[#64748B] uppercase tracking-[0.05em] text-center">
+              <span className="text-sm font-semibold text-grey-500 uppercase tracking-[0.05em] text-center">
                 Others
               </span>
             </div>
@@ -135,9 +135,9 @@ export function WhyChoose() {
                   </div>
 
                   {/* Others Value */}
-                  <div className="flex items-center justify-center gap-1.5 opacity-80">
-                    <X className="w-4 h-4 text-[#64748B] flex-shrink-0" />
-                    <span className="text-xs sm:text-sm text-[#64748B] hidden sm:inline">
+                  <div className="flex items-center justify-center gap-1.5 opacity-60">
+                    <X className="w-4 h-4 text-grey-500 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm text-grey-500 hidden sm:inline">
                       {row.others}
                     </span>
                   </div>

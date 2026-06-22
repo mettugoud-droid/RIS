@@ -90,10 +90,10 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy-900 border-t-4 border-[#D4A017]">
+    <footer className="bg-[#060A14] border-t border-white/5">
       {/* Main Footer */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 sm:pt-20 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 pb-12 border-b border-white/5">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             {/* Logo */}
@@ -168,14 +168,14 @@ export function Footer() {
         </div>
 
         {/* Map Section */}
-        <div className="py-10 border-b border-white/10">
+        <div className="py-10 border-b border-white/5">
           <div className="w-full h-[200px] rounded-2xl overflow-hidden border border-white/5 bg-navy-800 flex items-center justify-center group cursor-pointer hover:border-electric-500/20 transition-colors">
             <div className="text-center">
               <MapPin className="w-8 h-8 text-electric-500 mx-auto mb-2" />
               <p className="text-sm text-grey-400">
                 Hyderabad, Telangana, India
               </p>
-              <p className="text-xs text-[#94A3B8] mt-1">
+              <p className="text-xs text-grey-500 mt-1">
                 Click to open in Google Maps
               </p>
             </div>
@@ -184,26 +184,26 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-[#94A3B8]">
+          <p className="text-sm text-grey-500">
             &copy; {new Date().getFullYear()} Raksha Integrated Solutions. All
             Rights Reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
               href="/privacy"
-              className="text-sm text-[#94A3B8] hover:text-grey-300 transition-colors"
+              className="text-sm text-grey-500 hover:text-grey-300 transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="/terms"
-              className="text-sm text-[#94A3B8] hover:text-grey-300 transition-colors"
+              className="text-sm text-grey-500 hover:text-grey-300 transition-colors"
             >
               Terms of Service
             </a>
             <a
               href="/sitemap.xml"
-              className="text-sm text-[#94A3B8] hover:text-grey-300 transition-colors"
+              className="text-sm text-grey-500 hover:text-grey-300 transition-colors"
             >
               Sitemap
             </a>

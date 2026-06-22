@@ -1,43 +1,36 @@
 @import "tailwindcss";
 
-/* ============================================================
-   RAKSHA INTEGRATED SOLUTIONS — ENTERPRISE DESIGN SYSTEM
-   Industrial B2B Palette | WCAG AA Compliant
-   ============================================================ */
-
 @theme inline {
-  /* === PRIMARY (Deep Industrial Blue) === */
-  --color-navy-900: #0B1727;
-  --color-navy-800: #0F3D5E;
-  --color-navy-700: #164B6E;
-  --color-navy-600: #1F6E8C;
-  --color-navy-500: #2A8BA8;
+  /* === PRIMARY PALETTE === */
+  --color-navy-900: #0A0E1A;
+  --color-navy-800: #0F1629;
+  --color-navy-700: #141D38;
+  --color-navy-600: #1A2544;
+  --color-navy-500: #1F2D52;
 
-  /* === ACCENT (Industrial Gold) === */
-  --color-electric-300: #E8C547;
-  --color-electric-400: #D4A017;
-  --color-electric-500: #B8860B;
-  --color-electric-600: #9A7209;
-  --color-electric-700: #7C5C07;
+  --color-electric-300: #66A3FF;
+  --color-electric-400: #3385FF;
+  --color-electric-500: #0066FF;
+  --color-electric-600: #0052CC;
+  --color-electric-700: #003D99;
 
-  /* === BRAND RED (Raksha Logo Red) === */
+  /* === BRAND RED === */
   --color-brand-red: #E63329;
-  --color-brand-red-light: #EF5350;
+  --color-brand-red-light: #FF5252;
   --color-brand-red-dark: #C62828;
 
-  /* === NEUTRALS (Text & Surfaces) === */
-  --color-grey-100: #0B1727;
-  --color-grey-200: #1E293B;
-  --color-grey-300: #334155;
-  --color-grey-400: #475569;
-  --color-grey-500: #64748B;
-  --color-grey-600: #94A3B8;
+  --color-grey-100: #F8F9FA;
+  --color-grey-200: #E9ECEF;
+  --color-grey-300: #DEE2E6;
+  --color-grey-400: #ADB5BD;
+  --color-grey-500: #6C757D;
+  --color-grey-600: #495057;
 
   /* === SEMANTIC === */
-  --color-success: #2E7D32;
-  --color-warning: #D4A017;
-  --color-error: #C62828;
-  --color-info: #1F6E8C;
+  --color-success: #00C853;
+  --color-warning: #FFB300;
+  --color-error: #FF1744;
+  --color-info: #00B0FF;
 
   /* === FONTS === */
   --font-sans: var(--font-inter);
@@ -60,8 +53,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(15, 61, 94, 0.15); }
-  50% { box-shadow: 0 0 40px rgba(15, 61, 94, 0.25); }
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.4); }
 }
 
 @keyframes bounce-down {
@@ -92,13 +85,13 @@
 
 /* === BASE STYLES === */
 :root {
-  --background: #FFFFFF;
-  --foreground: #0B1727;
+  --background: #0A0E1A;
+  --foreground: #F8F9FA;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(15, 61, 94, 0.3) transparent;
+  scrollbar-color: rgba(0, 102, 255, 0.3) transparent;
 }
 
 *::-webkit-scrollbar {
@@ -110,7 +103,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: rgba(15, 61, 94, 0.3);
+  background: rgba(0, 102, 255, 0.3);
   border-radius: 3px;
 }
 
@@ -126,85 +119,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================================================
-   TEXT COLOR SYSTEM (Light Theme)
-   - text-white → Dark heading text (#0B1727)
-   - Buttons/dark sections keep actual white
-   ============================================================ */
-.text-white {
-  color: #0B1727 !important;
-}
-
-/* Preserve real white on colored/dark backgrounds */
-.gradient-cta, .gradient-cta *,
-[class*="bg-brand-red"], [class*="bg-brand-red"] *,
-[class*="bg-electric-500"], [class*="bg-electric-500"] *,
-[class*="bg-navy-900"], [class*="bg-navy-900"] *,
-[class*="bg-navy-800"], [class*="bg-navy-800"] *,
-.bg-\[\#25D366\], .bg-\[\#25D366\] *,
-.bg-\[\#0077B5\], .bg-\[\#0077B5\] *,
-footer, footer * {
-  color: inherit;
-}
-
-footer .text-white { color: #FFFFFF !important; }
-footer { color: #CBD5E1; }
-footer h4 { color: #FFFFFF !important; }
-footer a { color: #CBD5E1; }
-footer a:hover { color: #FFFFFF; }
-footer p { color: #94A3B8; }
-
-/* Dark sections override */
-.bg-navy-900 .text-white,
-.bg-navy-800 .text-white {
-  color: #FFFFFF !important;
-}
-.bg-navy-900, .bg-navy-800 {
-  color: #E2E8F0;
-}
-
-/* === GLASS MORPHISM (Light Theme) === */
+/* === GLASS MORPHISM UTILITIES === */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(15, 61, 94, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(15, 61, 94, 0.15);
-  box-shadow: 0 4px 12px rgba(15, 61, 94, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 102, 255, 0.3);
 }
 
-/* === GRADIENTS === */
+/* === GRADIENT UTILITIES === */
 .gradient-text {
-  background: linear-gradient(135deg, #0F3D5E, #1F6E8C);
+  background: linear-gradient(135deg, #0066FF, #66A3FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-cta {
-  background: linear-gradient(135deg, #0F3D5E 0%, #1F6E8C 100%);
-  color: #FFFFFF !important;
-}
-
-.gradient-cta * {
-  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #0A0E1A 0%, #141D38 50%, #0A0E1A 100%);
 }
 
 .gradient-radial-blue {
-  background: radial-gradient(circle, rgba(15, 61, 94, 0.03) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
 }
 
 /* === DOT GRID PATTERN === */
 .dot-grid {
-  background-image: radial-gradient(rgba(15, 61, 94, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 

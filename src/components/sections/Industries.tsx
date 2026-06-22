@@ -61,7 +61,7 @@ export function Industries() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-24 bg-white">
+    <section ref={ref} className="relative py-16 sm:py-24 bg-navy-800 dot-grid">
       <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Section Header */}
         <motion.div
@@ -92,7 +92,7 @@ export function Industries() {
             <motion.div
               key={industry.title}
               variants={staggerItem}
-              className="group relative bg-white border border-[#E2E8F0] shadow-sm rounded-2xl p-6 sm:p-8 text-center min-h-[180px] flex flex-col items-center justify-center overflow-hidden transition-all duration-300 hover:bg-[#F8FAFC] hover:border-[#1F6E8C] hover:shadow-md hover:-translate-y-0.5 cursor-pointer"
+              className="group relative bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 sm:p-8 text-center min-h-[180px] flex flex-col items-center justify-center overflow-hidden transition-all duration-300 hover:bg-electric-500/[0.08] hover:border-electric-500/25 hover:-translate-y-0.5 cursor-pointer"
             >
               {/* Icon */}
               <div className="mb-4 transition-all duration-300 group-hover:scale-110">

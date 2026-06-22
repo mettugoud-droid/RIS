@@ -92,18 +92,18 @@ function ReviewCard({ testimonial }: { testimonial: Testimonial }) {
 
       {/* Metrics */}
       {testimonial.metrics && (
-        <div className="flex gap-4 mb-4 py-3 border-t border-[#E2E8F0]">
+        <div className="flex gap-4 mb-4 py-3 border-t border-navy-600">
           {testimonial.metrics.map((m) => (
             <div key={m.label}>
               <p className="text-base font-bold text-electric-400">{m.value}</p>
-              <p className="text-[10px] text-[#475569]">{m.label}</p>
+              <p className="text-[10px] text-grey-500">{m.label}</p>
             </div>
           ))}
         </div>
       )}
 
       {/* Author */}
-      <div className="flex items-center gap-3 pt-3 border-t border-[#E2E8F0]">
+      <div className="flex items-center gap-3 pt-3 border-t border-navy-600">
         <Image src={testimonial.avatar} alt={testimonial.author} width={40} height={40} className="w-10 h-10 rounded-full object-cover" />
         <div>
           <p className="text-sm font-semibold text-white">{testimonial.author}</p>
@@ -145,11 +145,11 @@ export function TestimonialCarousel() {
             </div>
           </div>
           {t.metrics && (
-            <div className="flex gap-8 mt-6 pt-6 border-t border-[#E2E8F0]">
+            <div className="flex gap-8 mt-6 pt-6 border-t border-navy-600">
               {t.metrics.map((m) => (
                 <div key={m.label}>
                   <p className="text-xl font-bold text-electric-400">{m.value}</p>
-                  <p className="text-xs text-[#475569]">{m.label}</p>
+                  <p className="text-xs text-grey-500">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -241,7 +241,7 @@ export function TestimonialSection() {
 
         {/* Client Logos */}
         <div className="mt-16">
-          <p className="text-center text-xs font-semibold text-[#475569] uppercase tracking-wider mb-6">Trusted By</p>
+          <p className="text-center text-xs font-semibold text-grey-500 uppercase tracking-wider mb-6">Trusted By</p>
           <ClientLogos />
         </div>
       </div>

@@ -76,7 +76,7 @@ export function Projects() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-24 bg-[#F8FAFC]">
+    <section ref={ref} className="relative py-16 sm:py-24 bg-navy-900">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Section Header */}
         <motion.div
@@ -141,7 +141,7 @@ export function Projects() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
-                className="group bg-white border border-[#E2E8F0] shadow-sm rounded-2xl overflow-hidden hover:-translate-y-1 hover:border-[#1F6E8C] hover:shadow-lg transition-all duration-400 cursor-pointer"
+                className="group glass rounded-2xl overflow-hidden hover:-translate-y-1 hover:border-electric-500/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-400 cursor-pointer"
               >
                 {/* Image */}
                 <div className="relative h-[200px] sm:h-[220px] overflow-hidden">

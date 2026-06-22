@@ -73,8 +73,8 @@ export function SEOLandingTemplate({ data }: { data: LandingPageData }) {
         <section className="relative pt-28 pb-20 px-4 overflow-hidden">
           {/* Background elements */}
           <div className="absolute inset-0 gradient-hero" />
-          <div className="absolute inset-0 dot-grid opacity-20" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] gradient-radial-blue opacity-10" />
+          <div className="absolute inset-0 dot-grid opacity-40" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] gradient-radial-blue opacity-30" />
 
           <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column — Hero Content */}

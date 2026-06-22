@@ -8,19 +8,33 @@ import { images } from "@/lib/images";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Dark Overlay */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy-900">
+      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src={images.hero.warehouse}
           alt="Industrial warehouse infrastructure"
           fill
-          className="object-cover"
+          className="object-cover opacity-[0.15] brightness-50"
           priority
           sizes="100vw"
         />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0" style={{ background: "rgba(5, 20, 35, 0.82)" }} />
+      </div>
+
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 gradient-hero opacity-80" />
+      <div className="absolute inset-0 gradient-radial-blue" />
+
+      {/* Animated Grid Lines Background */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
       </div>
 
       {/* Network Diagram Background */}
@@ -37,8 +51,8 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white bg-white/10 border border-white/20 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-[#D4A017] animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-electric-400 bg-electric-500/10 border border-electric-500/20">
+            <span className="w-2 h-2 rounded-full bg-electric-400 animate-pulse" />
             Trusted by 50+ Enterprises Across India
           </span>
         </motion.div>
@@ -48,11 +62,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.0] max-w-4xl mb-6 !text-white"
-          style={{ color: "#FFFFFF" }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.0] max-w-4xl mb-6"
         >
           Industrial{" "}
-          <span className="text-[#D4A017]">CCTV &</span>
+          <span className="gradient-text">CCTV &</span>
           <br />
           Electrification Experts
         </motion.h1>
@@ -62,8 +75,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg sm:text-xl max-w-2xl mb-12 leading-relaxed"
-          style={{ color: "#CBD5E1" }}
+          className="text-lg sm:text-xl text-grey-400 max-w-2xl mb-12 leading-relaxed"
         >
           Designing, Executing and Maintaining Mission-Critical Infrastructure
           Across India. From warehouses to corporate offices.
@@ -76,11 +88,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center gap-4"
         >
-          {/* Primary CTA - Gold */}
+          {/* Primary CTA */}
           <a
             href="#site-audit"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white bg-[#D4A017] hover:bg-[#B8860B] shadow-[0_4px_16px_rgba(212,160,23,0.3)] hover:shadow-[0_8px_32px_rgba(212,160,23,0.4)] hover:-translate-y-0.5 transition-all duration-300"
-            style={{ color: "#FFFFFF" }}
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white gradient-cta shadow-[0_4px_16px_rgba(230,51,41,0.3)] hover:shadow-[0_0_60px_rgba(230,51,41,0.4)] hover:-translate-y-0.5 transition-all duration-300"
           >
             Book Free Site Survey
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -89,8 +100,7 @@ export function Hero() {
           {/* Secondary CTA */}
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold border border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300"
-            style={{ color: "#FFFFFF" }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white border border-white/20 backdrop-blur-sm hover:border-electric-500 hover:bg-electric-500/10 transition-all duration-300"
           >
             Request Proposal
           </a>
@@ -98,8 +108,7 @@ export function Hero() {
           {/* Tertiary CTA */}
           <a
             href="tel:+919999999999"
-            className="group inline-flex items-center gap-1 px-6 py-4 text-base font-medium transition-colors duration-200"
-            style={{ color: "#CBD5E1" }}
+            className="group inline-flex items-center gap-1 px-6 py-4 text-base font-medium text-electric-400 hover:text-white transition-colors duration-200"
           >
             Talk To Expert
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

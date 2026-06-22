@@ -95,7 +95,7 @@ export function Header() {
           "fixed top-0 left-0 right-0 z-[10000] transition-all duration-300",
           scrolled
             ? "bg-white shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-2"
-            : "bg-white shadow-sm py-4"
+            : "bg-transparent py-4"
         )}
       >
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
@@ -112,7 +112,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("solutions")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
+              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
                 Solutions
                 <ChevronDown
                   className={cn(
@@ -129,7 +129,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("industries")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
+              <button className={cn("flex items-center gap-1 text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
                 Industries
                 <ChevronDown
                   className={cn(
@@ -140,16 +140,16 @@ export function Header() {
               </button>
             </div>
 
-            <a href="/projects" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
+            <a href="/projects" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
               Projects
             </a>
-            <a href="/resources/blog" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
+            <a href="/resources/blog" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
               Resources
             </a>
-            <a href="/about" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
+            <a href="/about" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
               About
             </a>
-            <a href="/contact" className="text-sm font-medium text-gray-700 hover:text-brand-red transition-colors">
+            <a href="/contact" className={cn("text-sm font-medium transition-colors", scrolled ? "text-navy-900 hover:text-brand-red" : "text-white hover:text-grey-300")}>
               Contact
             </a>
           </nav>
@@ -157,7 +157,12 @@ export function Header() {
           {/* Desktop CTA */}
           <a
             href="#site-audit"
-            className="hidden lg:inline-flex items-center px-6 py-2.5 rounded-[10px] text-sm font-semibold text-white gradient-cta hover:-translate-y-0.5 transition-all duration-200"
+            className={cn(
+              "hidden lg:inline-flex items-center px-6 py-2.5 rounded-[10px] text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5",
+              scrolled
+                ? "text-white bg-brand-red hover:bg-brand-red-dark"
+                : "text-white bg-brand-red hover:bg-brand-red-dark"
+            )}
           >
             Get Quote
           </a>
@@ -165,7 +170,7 @@ export function Header() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+            className={cn("lg:hidden w-10 h-10 flex items-center justify-center", scrolled ? "text-navy-900" : "text-white")}
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -184,7 +189,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("solutions")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <div className="bg-white border border-[#E2E8F0] shadow-xl rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] p-8">
+              <div className="bg-navy-800/98 backdrop-blur-2xl border border-white/[0.06] rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] p-8">
                 <div className="grid grid-cols-4 gap-8">
                   {solutionsMenu.map((col) => (
                     <div key={col.category}>
@@ -196,14 +201,14 @@ export function Header() {
                           <a
                             key={item.title}
                             href={item.href}
-                            className="flex items-start gap-3 p-3 rounded-[10px] hover:bg-[#F1F5F9] transition-colors group"
+                            className="flex items-start gap-3 p-3 rounded-[10px] hover:bg-electric-500/[0.08] transition-colors group"
                           >
-                            <item.icon className="w-5 h-5 text-[#64748B] group-hover:text-[#0F3D5E] mt-0.5 flex-shrink-0 transition-colors" />
+                            <item.icon className="w-5 h-5 text-grey-400 group-hover:text-electric-400 mt-0.5 flex-shrink-0 transition-colors" />
                             <div>
-                              <p className="text-sm font-medium text-[#0F172A] group-hover:text-white">
+                              <p className="text-sm font-medium text-grey-200 group-hover:text-white">
                                 {item.title}
                               </p>
-                              <p className="text-xs text-[#475569] mt-0.5">
+                              <p className="text-xs text-grey-500 mt-0.5">
                                 {item.desc}
                               </p>
                             </div>
@@ -215,7 +220,7 @@ export function Header() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-6 pt-5 border-t border-[#E2E8F0] flex items-center justify-between">
+                <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
                   <p className="text-sm text-grey-400">Not sure what you need?</p>
                   <a
                     href="#site-audit"
@@ -242,23 +247,23 @@ export function Header() {
               onMouseEnter={() => setMegaMenu("industries")}
               onMouseLeave={() => setMegaMenu(null)}
             >
-              <div className="bg-white border border-[#E2E8F0] shadow-xl rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] p-8">
+              <div className="bg-navy-800/98 backdrop-blur-2xl border border-white/[0.06] rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] p-8">
                 <div className="grid grid-cols-2 gap-2">
                   {industriesMenu.map((item) => (
                     <a
                       key={item.title}
                       href={item.href}
-                      className="flex items-center gap-3 p-3 rounded-[10px] hover:bg-[#F1F5F9] transition-colors group"
+                      className="flex items-center gap-3 p-3 rounded-[10px] hover:bg-electric-500/[0.08] transition-colors group"
                     >
-                      <item.icon className="w-5 h-5 text-[#64748B] group-hover:text-[#0F3D5E] transition-colors" />
-                      <span className="text-sm font-medium text-[#0F172A] group-hover:text-white">
+                      <item.icon className="w-5 h-5 text-grey-400 group-hover:text-electric-400 transition-colors" />
+                      <span className="text-sm font-medium text-grey-200 group-hover:text-white">
                         {item.title}
                       </span>
                     </a>
                   ))}
                 </div>
 
-                <div className="mt-5 pt-4 border-t border-[#E2E8F0]">
+                <div className="mt-5 pt-4 border-t border-white/5">
                   <a
                     href="/industries"
                     className="flex items-center gap-1.5 text-sm font-medium text-electric-400 hover:text-white transition-colors"
@@ -281,47 +286,47 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[9999] bg-white pt-20 px-6 pb-6 overflow-y-auto lg:hidden"
+            className="fixed inset-0 z-[9999] bg-navy-900 pt-20 px-6 pb-6 overflow-y-auto lg:hidden"
           >
             <nav className="space-y-1">
               <a
                 href="/solutions"
-                className="block text-2xl font-semibold text-[#0F172A] py-4 border-b border-[#E2E8F0]"
+                className="block text-2xl font-semibold text-white py-4 border-b border-white/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Solutions
               </a>
               <a
                 href="/industries"
-                className="block text-2xl font-semibold text-[#0F172A] py-4 border-b border-[#E2E8F0]"
+                className="block text-2xl font-semibold text-white py-4 border-b border-white/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Industries
               </a>
               <a
                 href="/projects"
-                className="block text-2xl font-semibold text-[#0F172A] py-4 border-b border-[#E2E8F0]"
+                className="block text-2xl font-semibold text-white py-4 border-b border-white/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Projects
               </a>
               <a
                 href="/resources/blog"
-                className="block text-2xl font-semibold text-[#0F172A] py-4 border-b border-[#E2E8F0]"
+                className="block text-2xl font-semibold text-white py-4 border-b border-white/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Resources
               </a>
               <a
                 href="/about"
-                className="block text-2xl font-semibold text-[#0F172A] py-4 border-b border-[#E2E8F0]"
+                className="block text-2xl font-semibold text-white py-4 border-b border-white/5"
                 onClick={() => setMobileOpen(false)}
               >
                 About
               </a>
               <a
                 href="/contact"
-                className="block text-2xl font-semibold text-[#0F172A] py-4 border-b border-[#E2E8F0]"
+                className="block text-2xl font-semibold text-white py-4 border-b border-white/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact

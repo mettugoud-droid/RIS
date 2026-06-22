@@ -50,7 +50,7 @@ export function OEMPartners() {
   const categories = ["Security", "Electrical", "Networking", "Fire Safety"] as const;
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <section ref={ref} className="py-16 sm:py-20 bg-navy-800 border-y border-white/5">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +89,7 @@ export function OEMPartners() {
                   <Icon className={`w-5 h-5 ${config.color}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-white">{category} Brands</h3>
-                <span className="text-xs text-[#475569] ml-auto">{categoryPartners.length} partners</span>
+                <span className="text-xs text-grey-500 ml-auto">{categoryPartners.length} partners</span>
               </div>
 
               {/* Partner Cards */}
@@ -97,7 +97,7 @@ export function OEMPartners() {
                 {categoryPartners.map((partner) => (
                   <div
                     key={partner.name}
-                    className="bg-white border border-[#E2E8F0] shadow-sm rounded-xl p-4 hover:border-[#1F6E8C] hover:shadow-md transition-all group"
+                    className="glass rounded-xl p-4 hover:border-electric-500/30 transition-all group"
                   >
                     {/* Brand Name */}
                     <div className="flex items-center justify-between mb-3">
@@ -114,12 +114,12 @@ export function OEMPartners() {
                     {/* Solutions */}
                     <div className="flex flex-wrap gap-1">
                       {partner.solutions.slice(0, 3).map((sol) => (
-                        <span key={sol} className="px-1.5 py-0.5 rounded bg-[#F1F5F9] text-[10px] text-grey-400">
+                        <span key={sol} className="px-1.5 py-0.5 rounded bg-navy-700 text-[10px] text-grey-400">
                           {sol}
                         </span>
                       ))}
                       {partner.solutions.length > 3 && (
-                        <span className="px-1.5 py-0.5 rounded bg-[#F1F5F9] text-[10px] text-[#475569]">
+                        <span className="px-1.5 py-0.5 rounded bg-navy-700 text-[10px] text-grey-500">
                           +{partner.solutions.length - 3}
                         </span>
                       )}
@@ -133,7 +133,7 @@ export function OEMPartners() {
 
         {/* Trust Note */}
         <div className="mt-10 text-center">
-          <p className="text-xs text-[#475569]">
+          <p className="text-xs text-grey-500">
             All products sourced through authorized channels with manufacturer warranty. Certificates available on request.
           </p>
         </div>
