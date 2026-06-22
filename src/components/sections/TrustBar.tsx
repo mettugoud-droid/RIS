@@ -47,7 +47,7 @@ export function TrustBar() {
     <section
       id="trust"
       ref={ref}
-      className="relative bg-navy-800 border-y border-white/5 py-12 sm:py-16"
+      className="relative bg-white border-y border-[#E2E8F0] py-12 sm:py-16"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div

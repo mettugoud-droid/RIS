@@ -70,7 +70,7 @@ export function Services() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-24 bg-navy-900">
+    <section ref={ref} className="relative py-16 sm:py-24 bg-[#F8FAFC]">
       {/* Background Accent */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] rounded-full gradient-radial-blue opacity-50" />
@@ -108,11 +108,11 @@ export function Services() {
               key={service.title}
               href={service.href}
               variants={staggerItem}
-              className="group glass glass-hover rounded-2xl p-8 flex flex-col transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_40px_rgba(0,102,255,0.1)] cursor-pointer"
+              className="group bg-white border border-[#E2E8F0] rounded-2xl p-8 flex flex-col transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(15,61,94,0.1)] hover:border-[#1F6E8C]/30 cursor-pointer"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-electric-500/10 flex items-center justify-center mb-6 group-hover:bg-electric-500/20 group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-electric-500" />
+              <div className="w-14 h-14 rounded-xl bg-[#E0F2FE] flex items-center justify-center mb-6 group-hover:bg-[#BAE6FD] group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-7 h-7 text-[#0F3D5E]" />
               </div>
 
               {/* Title */}

@@ -34,7 +34,7 @@ export function WhyChoose() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-24 bg-navy-800">
+    <section ref={ref} className="relative py-16 sm:py-24 bg-white">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           variants={staggerContainer}

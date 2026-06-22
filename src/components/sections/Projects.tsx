@@ -76,7 +76,7 @@ export function Projects() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-24 bg-navy-900">
+    <section ref={ref} className="relative py-16 sm:py-24 bg-[#F8FAFC]">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Section Header */}
         <motion.div
