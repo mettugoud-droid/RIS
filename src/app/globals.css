@@ -1,37 +1,43 @@
 @import "tailwindcss";
 
+/* ============================================================
+   RAKSHA INTEGRATED SOLUTIONS — ENTERPRISE DESIGN SYSTEM
+   Industrial B2B Palette | WCAG AA Compliant
+   ============================================================ */
+
 @theme inline {
-  /* === LIGHT THEME PALETTE === */
-  --color-navy-900: #FFFFFF;
-  --color-navy-800: #F8F9FA;
-  --color-navy-700: #F1F3F5;
-  --color-navy-600: #E9ECEF;
-  --color-navy-500: #DEE2E6;
+  /* === PRIMARY (Deep Industrial Blue) === */
+  --color-navy-900: #0B1727;
+  --color-navy-800: #0F3D5E;
+  --color-navy-700: #164B6E;
+  --color-navy-600: #1F6E8C;
+  --color-navy-500: #2A8BA8;
 
-  --color-electric-300: #FF6B6B;
-  --color-electric-400: #E63329;
-  --color-electric-500: #D32F2F;
-  --color-electric-600: #B71C1C;
-  --color-electric-700: #8E0000;
+  /* === ACCENT (Industrial Gold) === */
+  --color-electric-300: #E8C547;
+  --color-electric-400: #D4A017;
+  --color-electric-500: #B8860B;
+  --color-electric-600: #9A7209;
+  --color-electric-700: #7C5C07;
 
-  /* === BRAND RED === */
+  /* === BRAND RED (Raksha Logo Red) === */
   --color-brand-red: #E63329;
-  --color-brand-red-light: #FF5252;
+  --color-brand-red-light: #EF5350;
   --color-brand-red-dark: #C62828;
 
-  /* === TEXT COLORS (Dark text for light backgrounds) === */
-  --color-grey-100: #111827;
-  --color-grey-200: #1F2937;
-  --color-grey-300: #374151;
-  --color-grey-400: #4B5563;
-  --color-grey-500: #6B7280;
-  --color-grey-600: #9CA3AF;
+  /* === NEUTRALS (Text & Surfaces) === */
+  --color-grey-100: #0B1727;
+  --color-grey-200: #1E293B;
+  --color-grey-300: #334155;
+  --color-grey-400: #475569;
+  --color-grey-500: #64748B;
+  --color-grey-600: #94A3B8;
 
   /* === SEMANTIC === */
-  --color-success: #16A34A;
-  --color-warning: #D97706;
-  --color-error: #DC2626;
-  --color-info: #2563EB;
+  --color-success: #2E7D32;
+  --color-warning: #D4A017;
+  --color-error: #C62828;
+  --color-info: #1F6E8C;
 
   /* === FONTS === */
   --font-sans: var(--font-inter);
@@ -54,8 +60,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(230, 51, 41, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(230, 51, 41, 0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(15, 61, 94, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(15, 61, 94, 0.25); }
 }
 
 @keyframes bounce-down {
@@ -84,26 +90,15 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes network-pulse {
-  0% { stroke-dashoffset: 100; opacity: 0; }
-  50% { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 0; }
-}
-
-@keyframes counter-glow {
-  0%, 100% { text-shadow: 0 0 10px rgba(0, 102, 255, 0); }
-  50% { text-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
-}
-
 /* === BASE STYLES === */
 :root {
   --background: #FFFFFF;
-  --foreground: #1A1A2E;
+  --foreground: #0B1727;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(230, 51, 41, 0.3) transparent;
+  scrollbar-color: rgba(15, 61, 94, 0.3) transparent;
 }
 
 *::-webkit-scrollbar {
@@ -115,7 +110,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: rgba(230, 51, 41, 0.3);
+  background: rgba(15, 61, 94, 0.3);
   border-radius: 3px;
 }
 
@@ -131,59 +126,85 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* === LIGHT THEME: Remap white text to dark === */
+/* ============================================================
+   TEXT COLOR SYSTEM (Light Theme)
+   - text-white → Dark heading text (#0B1727)
+   - Buttons/dark sections keep actual white
+   ============================================================ */
 .text-white {
-  color: #111827 !important;
+  color: #0B1727 !important;
 }
 
-/* === Keep actual white where needed === */
-.gradient-cta,
-.gradient-cta *,
-[class*="bg-brand-red"],
-[class*="bg-brand-red"] *,
-[class*="bg-electric-500"],
-[class*="bg-electric-500"] *,
-[class*="bg-success"],
-[class*="bg-success"] *,
-.bg-\[\#25D366\] *  {
+/* Preserve real white on colored/dark backgrounds */
+.gradient-cta, .gradient-cta *,
+[class*="bg-brand-red"], [class*="bg-brand-red"] *,
+[class*="bg-electric-500"], [class*="bg-electric-500"] *,
+[class*="bg-navy-900"], [class*="bg-navy-900"] *,
+[class*="bg-navy-800"], [class*="bg-navy-800"] *,
+.bg-\[\#25D366\], .bg-\[\#25D366\] *,
+.bg-\[\#0077B5\], .bg-\[\#0077B5\] *,
+footer, footer * {
+  color: inherit;
+}
+
+footer .text-white { color: #FFFFFF !important; }
+footer { color: #CBD5E1; }
+footer h4 { color: #FFFFFF !important; }
+footer a { color: #CBD5E1; }
+footer a:hover { color: #FFFFFF; }
+footer p { color: #94A3B8; }
+
+/* Dark sections override */
+.bg-navy-900 .text-white,
+.bg-navy-800 .text-white {
   color: #FFFFFF !important;
 }
+.bg-navy-900, .bg-navy-800 {
+  color: #E2E8F0;
+}
 
-/* === GLASS MORPHISM UTILITIES === */
+/* === GLASS MORPHISM (Light Theme) === */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(15, 61, 94, 0.08);
   backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(0, 102, 255, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(15, 61, 94, 0.15);
+  box-shadow: 0 4px 12px rgba(15, 61, 94, 0.08);
 }
 
-/* === GRADIENT UTILITIES === */
+/* === GRADIENTS === */
 .gradient-text {
-  background: linear-gradient(135deg, #E63329, #2D1B69);
+  background: linear-gradient(135deg, #0F3D5E, #1F6E8C);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-cta {
-  background: linear-gradient(135deg, #E63329 0%, #C62828 100%);
+  background: linear-gradient(135deg, #0F3D5E 0%, #1F6E8C 100%);
+  color: #FFFFFF !important;
+}
+
+.gradient-cta * {
+  color: #FFFFFF !important;
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #FFFFFF 100%);
 }
 
 .gradient-radial-blue {
-  background: radial-gradient(circle, rgba(230, 51, 41, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15, 61, 94, 0.03) 0%, transparent 70%);
 }
 
 /* === DOT GRID PATTERN === */
 .dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(15, 61, 94, 0.06) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 

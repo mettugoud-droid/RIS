@@ -157,12 +157,7 @@ export function Header() {
           {/* Desktop CTA */}
           <a
             href="#site-audit"
-            className={cn(
-              "hidden lg:inline-flex items-center px-6 py-2.5 rounded-[10px] text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5",
-              scrolled
-                ? "text-white bg-brand-red hover:bg-brand-red-dark"
-                : "text-white bg-brand-red hover:bg-brand-red-dark"
-            )}
+            className="hidden lg:inline-flex items-center px-6 py-2.5 rounded-[10px] text-sm font-semibold text-white gradient-cta hover:-translate-y-0.5 transition-all duration-200"
           >
             Get Quote
           </a>
