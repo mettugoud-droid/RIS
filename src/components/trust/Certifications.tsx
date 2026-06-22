@@ -31,7 +31,7 @@ export function Certifications() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-white">{cert.title}</p>
-                <p className="text-xs text-grey-500">{cert.desc}</p>
+                <p className="text-xs text-[#475569]">{cert.desc}</p>
               </div>
             </motion.div>
           ))}

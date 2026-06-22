@@ -18,14 +18,14 @@ function StatBlock({ value, suffix, label, isInView }: StatProps) {
   return (
     <motion.div variants={staggerItem} className="text-center relative">
       <div className="flex items-baseline justify-center gap-1">
-        <span className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-white tracking-tight">
+        <span className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0F172A] tracking-tight">
           {count}
         </span>
-        <span className="text-2xl sm:text-3xl font-bold text-electric-500">
+        <span className="text-2xl sm:text-3xl font-bold text-[#0F3D5E]">
           {suffix}
         </span>
       </div>
-      <p className="mt-1 text-sm font-medium text-grey-400 uppercase tracking-[0.05em]">
+      <p className="mt-1 text-sm font-medium text-[#475569] uppercase tracking-[0.05em]">
         {label}
       </p>
     </motion.div>

@@ -113,7 +113,7 @@ function ServiceHero({
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-navy-800 to-navy-900" />
-      <div className="absolute inset-0 dot-grid opacity-50" />
+      <div className="absolute inset-0 dot-grid opacity-15" />
       <div
         className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
         style={{
@@ -201,7 +201,7 @@ function BenefitsSection({ benefits }: { benefits: ServiceBenefit[] }) {
             <motion.div
               key={benefit.title}
               variants={staggerItem}
-              className="glass glass-hover rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+              className="bg-white border border-[#E2E8F0] shadow-sm rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="w-12 h-12 rounded-xl bg-electric-500/10 flex items-center justify-center mb-5">
                 <benefit.icon className="w-6 h-6 text-electric-500" />
@@ -250,9 +250,9 @@ function SolutionsSection({ solutions }: { solutions: ServiceSolution[] }) {
             <motion.div
               key={solution.title}
               variants={staggerItem}
-              className="glass rounded-2xl p-8"
+              className="bg-white border border-[#E2E8F0] shadow-sm rounded-2xl p-8"
             >
-              <h3 className="text-lg font-semibold text-white mb-4 pb-4 border-b border-white/[0.06]">
+              <h3 className="text-lg font-semibold text-white mb-4 pb-4 border-b border-[#E2E8F0]">
                 {solution.title}
               </h3>
               <ul className="space-y-3">
@@ -304,12 +304,12 @@ function CaseStudiesSection({ caseStudies }: { caseStudies: CaseStudy[] }) {
             <motion.div
               key={study.title}
               variants={staggerItem}
-              className="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-[#E2E8F0] shadow-sm rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300"
             >
               {/* Image Placeholder */}
               <div className="h-40 bg-gradient-to-br from-electric-500/20 to-navy-700 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-lg bg-white/20" />
+                <div className="w-12 h-12 rounded-xl bg-[#F1F5F9] flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-lg bg-[#E2E8F0]" />
                 </div>
               </div>
               <div className="p-6">
@@ -319,15 +319,15 @@ function CaseStudiesSection({ caseStudies }: { caseStudies: CaseStudy[] }) {
                 <p className="text-sm text-grey-400 mb-4">{study.location}</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-grey-500">Scope</span>
+                    <span className="text-[#475569]">Scope</span>
                     <span className="text-grey-300 font-medium">{study.scope}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-grey-500">Result</span>
+                    <span className="text-[#475569]">Result</span>
                     <span className="text-success font-medium">{study.result}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-grey-500">Value</span>
+                    <span className="text-[#475569]">Value</span>
                     <span className="text-electric-400 font-bold">{study.value}</span>
                   </div>
                 </div>
@@ -370,7 +370,7 @@ function FAQSection({ faqs }: { faqs: FAQ[] }) {
             <motion.details
               key={i}
               variants={staggerItem}
-              className="group glass rounded-xl overflow-hidden"
+              className="group bg-white border border-[#E2E8F0] shadow-sm rounded-xl overflow-hidden"
             >
               <summary className="flex items-center justify-between cursor-pointer p-6 text-white font-medium hover:text-electric-300 transition-colors list-none">
                 {faq.question}
@@ -378,7 +378,7 @@ function FAQSection({ faqs }: { faqs: FAQ[] }) {
                   +
                 </span>
               </summary>
-              <div className="px-6 pb-6 text-sm text-grey-400 leading-relaxed border-t border-white/5 pt-4">
+              <div className="px-6 pb-6 text-sm text-grey-400 leading-relaxed border-t border-[#E2E8F0] pt-4">
                 {faq.answer}
               </div>
             </motion.details>
@@ -405,7 +405,7 @@ function BottomCTA({ ctaText }: { ctaText: string }) {
         </p>
 
         {/* Lead Form */}
-        <div className="glass rounded-3xl p-8 text-left">
+        <div className="bg-white border border-[#E2E8F0] shadow-sm rounded-3xl p-8 text-left">
           <div className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-grey-300 mb-2">
@@ -414,7 +414,7 @@ function BottomCTA({ ctaText }: { ctaText: string }) {
               <input
                 type="text"
                 placeholder="John Doe"
-                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-grey-500 focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all"
+                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-[#475569] focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all"
               />
             </div>
             <div>
@@ -424,7 +424,7 @@ function BottomCTA({ ctaText }: { ctaText: string }) {
               <input
                 type="tel"
                 placeholder="+91 98765 43210"
-                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-grey-500 focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all"
+                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-[#475569] focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all"
               />
             </div>
             <div>
@@ -434,7 +434,7 @@ function BottomCTA({ ctaText }: { ctaText: string }) {
               <input
                 type="text"
                 placeholder="Your Company Pvt Ltd"
-                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-grey-500 focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all"
+                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-[#475569] focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all"
               />
             </div>
             <div>
@@ -444,7 +444,7 @@ function BottomCTA({ ctaText }: { ctaText: string }) {
               <textarea
                 rows={3}
                 placeholder="Tell us about your requirement..."
-                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-grey-500 focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all resize-y"
+                className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder:text-[#475569] focus:border-electric-500 focus:ring-4 focus:ring-electric-500/10 outline-none transition-all resize-y"
               />
             </div>
             <button

@@ -63,7 +63,7 @@ export function LeadCapture() {
       }}
     >
       {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none">
+      <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
         <div
           className="w-full h-full"
           style={{
@@ -128,7 +128,7 @@ export function LeadCapture() {
                       ? "bg-electric-500 text-white"
                       : s === step
                       ? "bg-electric-500 text-white shadow-[0_0_20px_rgba(0,102,255,0.4)]"
-                      : "bg-white/5 border border-white/15 text-grey-500"
+                      : "bg-[#F1F5F9] border border-[#E2E8F0] text-[#64748B]"
                   )}
                 >
                   {s < step ? <Check className="w-4 h-4" /> : s}
@@ -137,7 +137,7 @@ export function LeadCapture() {
                   <div
                     className={cn(
                       "w-16 sm:w-20 h-0.5 mx-1",
-                      s < step ? "bg-electric-500" : "bg-white/10"
+                      s < step ? "bg-electric-500" : "bg-[#E2E8F0]"
                     )}
                   />
                 )}

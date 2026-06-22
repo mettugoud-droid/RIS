@@ -71,11 +71,6 @@ export function Services() {
 
   return (
     <section ref={ref} className="relative py-16 sm:py-24 bg-[#F8FAFC]">
-      {/* Background Accent */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[800px] h-[800px] rounded-full gradient-radial-blue opacity-50" />
-      </div>
-
       <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Section Header */}
         <motion.div

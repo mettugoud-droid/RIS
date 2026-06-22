@@ -22,7 +22,7 @@ export function NetworkDiagram() {
   ];
 
   return (
-    <div className="w-full max-w-4xl h-[400px] opacity-50 sm:opacity-60">
+    <div className="w-full max-w-4xl h-[400px] opacity-30">
       <svg
         viewBox="0 0 800 400"
         fill="none"
