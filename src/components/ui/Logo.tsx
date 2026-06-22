@@ -18,9 +18,9 @@ export function Logo({ size = "md", className = "" }: LogoProps) {
     <div
       className={`relative inline-flex items-center justify-center rounded-2xl ${className}`}
       style={{
-        background: "radial-gradient(ellipse at center, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 80%)",
+        background: "radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 80%)",
         padding: "8px 16px",
-        boxShadow: "0 0 30px rgba(255,255,255,0.4), 0 0 60px rgba(255,255,255,0.15)",
+        boxShadow: "0 0 15px rgba(255,255,255,0.05), 0 0 30px rgba(255,255,255,0.02)",
       }}
     >
       <img
