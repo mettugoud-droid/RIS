@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* === PRIMARY PALETTE === */
+  /* === LIGHT THEME PALETTE === */
   --color-navy-900: #FFFFFF;
   --color-navy-800: #F8F9FA;
   --color-navy-700: #F1F3F5;
@@ -14,23 +14,24 @@
   --color-electric-600: #B71C1C;
   --color-electric-700: #8E0000;
 
-  /* === BRAND RED (Raksha Script Red) === */
+  /* === BRAND RED === */
   --color-brand-red: #E63329;
   --color-brand-red-light: #FF5252;
   --color-brand-red-dark: #C62828;
 
-  --color-grey-100: #1A1A2E;
-  --color-grey-200: #2D2D44;
-  --color-grey-300: #3D3D5C;
-  --color-grey-400: #5C5C7A;
-  --color-grey-500: #8888A0;
-  --color-grey-600: #ADADC0;
+  /* === TEXT COLORS (Dark text for light backgrounds) === */
+  --color-grey-100: #111827;
+  --color-grey-200: #1F2937;
+  --color-grey-300: #374151;
+  --color-grey-400: #4B5563;
+  --color-grey-500: #6B7280;
+  --color-grey-600: #9CA3AF;
 
   /* === SEMANTIC === */
-  --color-success: #00C853;
-  --color-warning: #FFB300;
-  --color-error: #FF1744;
-  --color-info: #00B0FF;
+  --color-success: #16A34A;
+  --color-warning: #D97706;
+  --color-error: #DC2626;
+  --color-info: #2563EB;
 
   /* === FONTS === */
   --font-sans: var(--font-inter);
@@ -128,6 +129,24 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* === LIGHT THEME: Remap white text to dark === */
+.text-white {
+  color: #111827 !important;
+}
+
+/* === Keep actual white where needed === */
+.gradient-cta,
+.gradient-cta *,
+[class*="bg-brand-red"],
+[class*="bg-brand-red"] *,
+[class*="bg-electric-500"],
+[class*="bg-electric-500"] *,
+[class*="bg-success"],
+[class*="bg-success"] *,
+.bg-\[\#25D366\] *  {
+  color: #FFFFFF !important;
 }
 
 /* === GLASS MORPHISM UTILITIES === */

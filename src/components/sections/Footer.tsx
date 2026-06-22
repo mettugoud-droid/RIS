@@ -90,9 +90,10 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#060A14] border-t border-white/5">
+    <footer className="bg-gray-900 border-t border-gray-200">
       {/* Main Footer */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 sm:pt-20 pb-8">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 pt-16 sm:pt-20 pb-8 [&_*]:!text-inherit">
+        <style>{`footer { --tw-text-opacity: 1; } footer .text-white { color: #FFFFFF !important; } footer p, footer a, footer span, footer li { color: #D1D5DB; } footer h4 { color: #FFFFFF !important; } footer a:hover { color: #FFFFFF !important; }`}</style>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 pb-12 border-b border-white/5">
           {/* Brand Column */}
           <div className="lg:col-span-2">
